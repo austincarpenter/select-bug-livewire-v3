@@ -27,13 +27,13 @@ class DemoComponent extends Component
     {
         return <<<'blade'
             <div>
-                <select wire:model="category">
+                <select wire:model.live="category">
                     @foreach(array_keys($this->food) as $value)
                         <option value="{{ $value }}">{{ ucfirst($value) }}</option>
                     @endforeach
                 </select>
 
-                <select wire:model="choice">
+                <select wire:model.live="choice">
                     @foreach($this->food[$this->category] as $value)
                         <option value="{{ $value }}">{{ ucfirst($value) }}</option>
                     @endforeach
